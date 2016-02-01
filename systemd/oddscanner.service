@@ -1,0 +1,15 @@
+[Unit]
+Description=Oddscanner (Bookmakers Parser)
+After=syslog.target network.target remote-fs.target nss-lookup.target
+
+[Service]
+User=oddscanner
+ExecStart=/opt/oddscanner/oddscanner.pl
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s QUIT $MAINPID
+RestartSec=1s
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+

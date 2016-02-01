@@ -1,0 +1,9 @@
+/var/log/oddscanner/*log {
+    create 0644 oddscanner oddscanner
+    daily
+    rotate 10
+    missingok
+    compress
+    sharedscripts
+}
+
